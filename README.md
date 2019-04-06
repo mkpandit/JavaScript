@@ -1,3 +1,1 @@
-# TypeScript
-
-Typescript project setup
+# JavaScript Projects
