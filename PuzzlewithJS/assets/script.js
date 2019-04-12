@@ -10,24 +10,20 @@ const divList = container.getElementsByClassName('box')
 for (let item of divList) {
 
     item.style.backgroundColor = getRandomColor()
-    item.innerHTML = -1 //getRandomInt(0, 9)
+    item.innerHTML = -1
     item.addEventListener(
         'click',
-        function(e) {
-            if (-1 == item.innerHTML) {
-                setItemValu(item)
-                let secondElem = document.getElementsByClassName('d-'+getRandomInt(0, 9))
+        (e) => {
+            if (-1 == this.innerHTML) {
+                this.innerHTML = 'O'
+                let secondElem = document.getElementsByClassName(`d-${getRandomInt(0, 9)}`)
                 console.log(item)
                 console.log(secondElem[0])
-                setItemValu(secondElem[0])
+                secondElem[0].innerHTML = 'X'
             }
         },
         false
     )
-}
-
-function setItemValu(item) {
-    item.innerHTML = getRandomInt(0, 9)
 }
 
 function getRandomColor() {
